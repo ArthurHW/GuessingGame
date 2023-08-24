@@ -4,4 +4,4 @@ The ArthurWiebusch_GuessingGame module is responsible for displaying the option 
 
 ## Configuration
 
-You can disable the Guessing Game funcionality on Magento Admin under **Stores > Configuration > Arthur Wiebusch > General > Enable**
+You can disable the Guessing Game funcionality on Magento Admin under **Stores > Configuration > Arthur Wiebusch > Guessing Game > General > Enable**
