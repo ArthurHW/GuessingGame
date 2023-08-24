@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @author    Arthur Henrique Wiebusch <arturh07@gmail.com>
+ * @copyright 2023 Arthur Henrique Wiebusch
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <arthurwiebusch_guessinggame>
+            <general>
+                <enable>1</enable>
+            </general>
+        </arthurwiebusch_guessinggame>
+    </default>
+</config>

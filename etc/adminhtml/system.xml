@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!-- 
+/**
+ * @author    Arthur Henrique Wiebusch <arturh07@gmail.com>
+ * @copyright 2023 Arthur Henrique Wiebusch
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="arthur_wiebusch" translate="label" sortOrder="9">
+            <label>Arthur Wiebusch</label>
+        </tab>
+        <section id="arthurwiebusch_guessinggame" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Guessing Game</label>
+            <tab>arthur_wiebusch</tab>
+            <resource>ArthurWiebusch_GuessingGame::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Guessing Game</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

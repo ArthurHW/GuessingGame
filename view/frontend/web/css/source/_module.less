@@ -1,0 +1,84 @@
+/**
+ * @author    Arthur Henrique Wiebusch <arturh07@gmail.com>
+ * @copyright 2023 Arthur Henrique Wiebusch
+ */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .guessing-game-modal-inner {
+        display: none;
+
+        .guessing-game-modal & {
+            display: block;
+        }
+    }
+
+    .guessing-game-modal {
+        .modal-inner-wrap {
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .modal-title {
+            font-weight: @font-weight__bold;
+            border: none;
+        }
+
+        .action-close::before {
+            color: @color-black;
+        }
+
+        input[type="number"] {
+            &:focus {
+                box-shadow: 0 0 1px 1px @color-black;
+            }
+
+            &.mage-error:focus {
+                box-shadow: 0 0 1px 1px @error__color;
+            }
+        }
+
+        .guessing-game-message {
+            margin-top: 12px;
+            color: @color-black;
+        }
+    }
+
+    .guessing-game-modal, .guessing-game-footer {
+        .action.primary {
+            background-color: @color-black;
+            border-color: @color-black;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: @color-gray19;
+                border-color: @color-gray19;
+            }
+        }
+    }
+
+    .guessing-game-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+
+        p {
+            margin: 0 12px 0 0;
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .guessing-game-footer {
+        display: none;
+    }
+}

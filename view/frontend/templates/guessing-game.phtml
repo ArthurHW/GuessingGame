@@ -1,0 +1,72 @@
+<?php
+/**
+ * @author    Arthur Henrique Wiebusch <arturh07@gmail.com>
+ * @copyright 2023 Arthur Henrique Wiebusch
+ */
+
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var Magento\Framework\Escaper $escaper
+ */
+?>
+<div class="footer guessing-game-footer">
+    <p><?= $escaper->escapeHtml(__('Want to play something? play our guessing game')) ?></p>
+    <button class="action primary guessing-game-start">
+        <?= $escaper->escapeHtml(__('Start Guessing Game')) ?>
+    </button>
+</div>
+
+<div data-mage-init='{"Magento_Ui/js/modal/modal": {
+        "modalClass": "guessing-game-modal",
+        "title": "Guessing Game",
+        "trigger": ".guessing-game-start",
+        "buttons": []
+    }}'
+    data-bind="scope: 'guessing-game'"
+    class="guessing-game-modal-inner"
+>
+    <p><?= $escaper->escapeHtml(__('Guess a number between 1 and 50')) ?></p>
+    <form data-mage-init='{"validation": {}}' data-bind="submit: guess">
+        <fieldset class="fieldset">
+            <legend class="abs-visually-hidden">
+                <?= $escaper->escapeHtml(__('Guessing Game')) ?>
+            </legend>
+            <div class="field number">
+                <label class="label" for="guessing-game-number">
+                    <?= $escaper->escapeHtml(__('Guess a number')) ?>
+                </label>
+                <input type="number" id="guessing-game-number"
+                        data-validate="{ 'required-number': true, 'validate-number-range':'1-50' }"
+                        placeholder="<?= $escaper->escapeHtml(__('Ex: 5')) ?>"
+                        name="guessing-game-number"
+                        data-bind="value: number"
+                />
+            </div>
+            <div class="actions-toolbar">
+                <button class="action primary" data-bind="visible: playing">
+                    <?= $escaper->escapeHtml(__('Guess')) ?>
+                </button>
+                <button class="action secondary" type="button" data-bind="visible: !playing(), click: restart">
+                    <?= $escaper->escapeHtml(__('Restart')) ?>
+                </button>
+            </div>
+            <div class="guessing-game-message">
+                <span data-bind="html: message"></span>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "guessing-game": {
+                        "component": "ArthurWiebusch_GuessingGame/js/view/guessing-game"
+                    }
+                }
+            }
+        }
+    }
+</script>

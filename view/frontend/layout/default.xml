@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @author    Arthur Henrique Wiebusch <arturh07@gmail.com>
+ * @copyright 2023 Arthur Henrique Wiebusch
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block name="guessing_game" ifconfig="arthurwiebusch_guessinggame/general/enable"
+                   template="ArthurWiebusch_GuessingGame::guessing-game.phtml"
+                   after="-"
+            />
+        </referenceContainer>
+        <move element="guessing_game" destination="before.body.end" after="-" />
+    </body>
+</page>
