@@ -1,4 +1,4 @@
-# Magento_AdobeStockImageAdminUi module
+# ArthurWiebusch_GuessingGame module
 
 The ArthurWiebusch_GuessingGame module is responsible for displaying the option to play a Guessing Game inside the Store
 
